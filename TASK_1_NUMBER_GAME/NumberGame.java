@@ -31,9 +31,9 @@ public class NumberGame{
                     System.out.printf("Congratulations! You guessed the number in %d attempts!%n", attempts);
                     break;
                 } else if (userGuess < numberToGuess) {
-                    System.out.println("Too low! Try again.");
+                    System.out.println("Too Low! Try again.");
                 } else {
-                    System.out.println("Too high! Try again.");
+                    System.out.println("Too High! Try again.");
                 }
             }
             System.out.printf("Your score for this round is %d.%n", attempts);
