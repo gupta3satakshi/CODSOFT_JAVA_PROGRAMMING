@@ -9,27 +9,28 @@ public class QuizApplication {
     };
     private static final int QUESTION_TIME_LIMIT = 5; // Time limit for each question in seconds
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int score = 0;
-        for (String[] q : questions) {
-            System.out.println(q[0]);
-            for (int i = 1; i < 5; i++) {
-                System.out.println(q[i]);
+        try (Scanner scanner = new Scanner(System.in)) {
+            int score = 0;
+            for (String[] q : questions) {
+                System.out.println(q[0]);
+                for (int i = 1; i < 5; i++) {
+                    System.out.println(q[i]);
+                }
+                System.out.print("Enter your answer (A, B, C, or D): ");
+                String userAnswer = scanner.next();
+                if (userAnswer.equalsIgnoreCase(q[5])) {
+                    System.out.println("Correct!\n");
+                    score++;
+                } else {
+                    System.out.println("Incorrect. The correct answer is " + q[5] + "\n");
+                }
+                try {
+                    Thread.sleep(QUESTION_TIME_LIMIT * 1000); // Pause for QUESTION_TIME_LIMIT seconds
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
-            System.out.print("Enter your answer (A, B, C, or D): ");
-            String userAnswer = scanner.next();
-            if (userAnswer.equalsIgnoreCase(q[5])) {
-                System.out.println("Correct!\n");
-                score++;
-            } else {
-                System.out.println("Incorrect. The correct answer is " + q[5] + "\n");
-            }
-            try {
-                Thread.sleep(QUESTION_TIME_LIMIT * 1000); // Pause for QUESTION_TIME_LIMIT seconds
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            System.out.println("Quiz completed! Your final score is: " + score + "/" + questions.length);
         }
-        System.out.println("Quiz completed! Your final score is: " + score + "/" + questions.length);
     }
 }
