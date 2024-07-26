@@ -16,7 +16,7 @@ public class StudentGradeCalculator{
         String grade = calc_Grade(avg_Percentage);
         System.out.printf("Total Marks: %d%n", tot_Marks);
         System.out.printf("Average Percentage: %.2f%%%n", avg_Percentage);
-        System.out.printf("Grade: %s%n", grade);
+        System.out.printf("GRADE: %s%n", grade);
 
         sc.close();
     }
