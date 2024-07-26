@@ -7,7 +7,7 @@ public class QuizApplication {
             {"What does the expression float a = 35 / 0 return?", "A. 0", "B. Not a Number", "C. Infinity", "D. Run time exception", "C"},
             {"Which of the following tool is used to generate API documentation in HTML format from doc comments in source code?", "A. javap tool", "B. javaw command", "C. Javadoc tool", "D. javah command", "C"}
     };
-    private static final int QUESTION_TIME_LIMIT = 10; // Time limit for each question in seconds
+    private static final int QUESTION_TIME_LIMIT = 5; // Time limit for each question in seconds
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int score = 0;
